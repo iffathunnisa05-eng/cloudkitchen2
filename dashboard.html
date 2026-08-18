@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Dashboard - Cloud Kitchen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h2>My Cloud Kitchen</h2>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart 🛒</a>
+            <a href="order.html">Order Now</a>
+        </nav>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <h1>Welcome, <span id="customer-name"></span>! 👋</h1>
+
+        <p>Welcome to your Cloud Kitchen dashboard.</p>
+
+
+        <div class="dashboard-card">
+
+    <h2>👤 My Profile</h2>
+
+    <p>
+        <strong>Name:</strong>
+        <span id="profile-name"></span>
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        <span id="profile-email"></span>
+    </p>
+
+    <p>
+        <strong>Mobile:</strong>
+        <span id="profile-mobile"></span>
+    </p>
+
+    <a href="profile.html" class="dashboard-button">
+        Edit Profile
+    </a>
+
+</div>
+
+
+            <div class="dashboard-card">
+
+                <h2>📍 Delivery Address</h2>
+
+                <p>
+                    <strong>Location:</strong>
+                    <span id="profile-location"></span>
+                </p>
+
+                <p>
+                    <strong>Address:</strong>
+                    <span id="profile-address"></span>
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>🍴 Order Food</h2>
+
+                <p>
+                    Browse our delicious menu and place your order.
+                </p>
+
+                <a href="menu.html" class="dashboard-button">
+                    View Menu
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <h2>🛒 My Cart</h2>
+
+                <p>
+                    Check your selected food and total amount.
+                </p>
+
+                <a href="cart.html" class="dashboard-button">
+                    View Cart
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <button class="logout-button" onclick="logout()">
+            Logout
+        </button>
+
+    </main>
+
+
+    <script>
+
+        const customer =
+            JSON.parse(localStorage.getItem("customer"));
+
+        if (!customer) {
+
+            window.location.href = "register.html";
+
+        } else {
+
+            document.getElementById("customer-name").textContent =
+                customer.name;
+
+            document.getElementById("profile-name").textContent =
+                customer.name;
+
+            document.getElementById("profile-email").textContent =
+                customer.email;
+
+            document.getElementById("profile-mobile").textContent =
+                customer.mobile;
+
+            document.getElementById("profile-location").textContent =
+                customer.location;
+
+            document.getElementById("profile-address").textContent =
+                customer.address;
+        }
+
+
+        function logout() {
+
+            localStorage.removeItem("customer");
+
+            window.location.href = "register.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

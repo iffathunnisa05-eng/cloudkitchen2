@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Now - My Cloud Kitchen</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>My Cloud Kitchen</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="order.html">Order Now</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <h1>Place Your Order</h1>
+
+        <form action="thankyou.html">
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+    
+
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="5" required></textarea>
+
+            <label for="payment">Payment Method</label>
+
+            <select id="payment" name="payment">
+                <option value="cod">Cash on Delivery</option>
+                <option value="online">Online Payment</option>
+            </select>
+
+            <button type="submit">Place Order</button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
